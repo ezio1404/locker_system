@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locker System</title>
+    <link rel="stylesheet" href="assets/css/bs.css">
+    <link rel="stylesheet" href="assets/css/fa.css">
+    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="login">
+    <a href="" class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form method="post">
+              <h1>Login Form</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
+              </div>
+              <div>
+              <button class="btn btn-default submit" name="login" type="submit">Login</button>
+                <a class="reset_pass" href="#">Lost your password?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">New to site?
+                  <a href="#signup" class="to_register"> Create Account </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                <h1><i class="fa fa-lock"></i> Locker System</h1>
+                <p>©2018 All Rights Reserved. Locker System. Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+          <!-- PHP -->
+                    <!-- END -->
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form method="post">
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" name="password"/>
+              </div>
+              <div>
+                  <input type="text" class="form-control" placeholder="Firstname" required="" name="firstname"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Lastname" required="" name="lastname"/>
+              </div>
+              <div>
+                    <select name="dept_code" class="form-control" style="margin-bottom:5%" required="">
+                      <option value="" disabled selected>Course</option>
+                     <option value=1 >BSIT</option><option value=2 >BSBA</option>                    </select>
+                   
+              </div>
+              <div >
+                    <select name="yearlevel"  class="form-control" required="">
+                      <option value="" disabled selected>Year Level</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+              </div>
+              <div>
+                <button class="btn btn-default submit" name="register" type="submit" style="margin-top:5%">Submit</button>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Locker System</h1>
+                  <p>©2018 All Rights Reserved. Locker System. Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- PHP -->
+    </body>
+</html>
