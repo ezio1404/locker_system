@@ -5,5 +5,5 @@ if(isset($_POST['login'])){ // button name login
     $username = $_POST['username'];
     $password = $_POST['password'];
     $login->signIn(array($username,$password));
-    header('location:home.php'); // redirect page
+    header('location:../../view/home.html'); // redirect page
 }

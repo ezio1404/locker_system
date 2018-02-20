@@ -1,49 +1,49 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Locker System</title>
-  <link rel="stylesheet" href="assets/css/bs.css">
-  <link rel="stylesheet" href="assets/css/fa.css">
-  <link rel="stylesheet" href="assets/css/progress.css">
-  <link rel="stylesheet" href="assets/css/animate.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
-</head>
-<body class="login">
-  <a href="" class="hiddenanchor" id="signup"></a>
-  <a class="hiddenanchor" id="signin"></a>
-  
-  <div class="login_wrapper">
-    <div class="animate form login_form">
-      <section class="login_content">
-        <form method="post">
-          <h1>UC Locker System</h1>
-          <div>
-            <input type="text" class="form-control" placeholder="Username" required="" name="username" />
-          </div>
-          <div>
-            <input type="password" class="form-control" placeholder="Password" required="" name="password" />
-          </div>
-          <div>
-            <button class="btn btn-default submit" name="login" type="submit">Login</button>
-          </div>
-          <div class="clearfix">
-
-          </div>
-          <div class="separator">
-            <div class="clearfix"></div>
-            <br />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locker System</title>
+    <link rel="stylesheet" href="assets/css/bs.css">
+    <link rel="stylesheet" href="assets/css/fa.css">
+    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body class="login">
+    <a href="" class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+    
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form method="post" action="../controller/loginController/loginUser.php">
+            <h1>UC Locker System</h1>
             <div>
-              <h1><i class="fa fa-lock"></i> Locker System</h1>
-              <p>©2018 All Rights Reserved. Locker System. Privacy and Terms</p>
+              <input type="text" class="form-control" placeholder="Username" required="" name="username" />
             </div>
-          </div>
-        </form>
-      </section>
-      <!-- PHP -->
+            <div>
+              <input type="password" class="form-control" placeholder="Password" required="" name="password" />
+            </div>
+            <div>
+              <button class="btn btn-default submit" name="login" type="submit">Login</button>
+            </div>
+            <div class="clearfix">
+              
+            </div>
+            <div class="separator">
+              <div class="clearfix"></div>
+              <br />
+              <div>
+                <h1><i class="fa fa-lock"></i> Locker System</h1>
+                <p>©2018 All Rights Reserved. Locker System. Privacy and Terms</p>
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- PHP -->
       <!-- END -->
     </div>
   </div>
