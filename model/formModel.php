@@ -22,20 +22,14 @@ function addForm($data){
     return DBHelper::insertRecord($data,$this->fields,$this->table); 
  }
 // Retreive
-function getAllDept(){
-    return DBHelper::getAllRecord('tbl_dept');
-}
-function getAllStud(){
-    return DBHelper::getAllRecord('tbl_student');
-}
 function getAllForm(){
     return DBHelper::getAllRecord($this->table);
 }
 function getFormById($ref_id){
     return DBHelper::getRecordById($this->table,'form_id',$ref_id);
 }
-function getDept($table,$ref_id){
-    return DBHelper::getRecord(array($table,$this->table.' f'),'f.form_id',$ref_id);
+function getDept($ref_id){
+    return DBHelper::getRecord($this->table.' f','f.form_id',$ref_id);
 }
 // Update
 function updateForm($data){
@@ -45,5 +39,11 @@ function updateForm($data){
 function deleteForm($ref_id){
     return DBHelper::deleteRecord($this->table,'form_id',$ref_id);
 }
-
+//SOME FUNCTIONs
+function getAllDept(){
+        return DBHelper::getAllRecord('tbl_dept');
+    }
+    function getAllStud(){
+        return DBHelper::getAllRecord('tbl_student');
+    }
 }

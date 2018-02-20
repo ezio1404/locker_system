@@ -3,7 +3,7 @@
 require 'db/dbhelper.php';
 
 
-Class Locker extends Connection{
+Class Locker extends DBHelper{
     private $table = 'tbl_locker';
     private $fields = array(
         'dept_id',
@@ -11,7 +11,7 @@ Class Locker extends Connection{
     );
 //constructor
     function __construct(){
-        return Connection::__construct();
+        return DBHelper::__construct();
     }
 // Create
 function addLocker($data){
@@ -24,11 +24,11 @@ function addLocker($data){
  function getLockerById($ref_id){
      return DBHelper::getRecordById($this->table,'locker_num',$ref_id);
  }
- function getLocker($table,$ref_id){
-     return DBHelper::getRecord(array($table,$this->table.' l'),'l.locker_num',$ref_id);
+ function getLocker($ref_id){
+     return DBHelper::getRecord($this->table.' l','l.locker_num',$ref_id);
  }
 // Update
-function updateLocker($data){
+function updateLocker($data,$ref_id){
     return DBHelper::updateRecord($this->table.' l',$this->fields,$data,'l.locker_num',$ref_id); 
  }
  // Delete

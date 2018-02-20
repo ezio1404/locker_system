@@ -24,11 +24,11 @@ function addDept($data){
  function getDeptById($ref_id){
      return DBHelper::getRecordById($this->table,'dept_id',$ref_id);
  }
- function getDept($table,$ref_id){
-     return DBHelper::getRecord(array($table,$this->table.' d'),'d.dept_id',$ref_id);
+ function getDept($ref_id){
+     return DBHelper::getRecord($this->table.' d','d.dept_id',$ref_id);
  }
 // Update
-function updateDept($data){
+function updateDept($data,$ref_id){
     return DBHelper::updateRecord($this->table.' d',$this->fields,$data,'d.dept_id',$ref_id); 
  }
  // Delete

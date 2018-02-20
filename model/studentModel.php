@@ -3,13 +3,13 @@
 require 'db/dbhelper.php';
 
 
-Class Student extends Connection{
+Class Student extends DBHelper{
     private $table = 'tbl_student';
     private $fields = array(
         'stud_id',
         'stud_fname',
         'stud_lname',
-        'dept_code',
+        'dept_id',
         'stud_yearLevel',
         'username',
         'password',
@@ -17,7 +17,7 @@ Class Student extends Connection{
     );
 //constructor
     function __construct(){
-        return Connection::__construct();
+        return DBHelper::__construct();
     }
 // Create
 function addStud($data){
@@ -30,11 +30,11 @@ function addStud($data){
  function getStudById($ref_id){
      return DBHelper::getRecordById($this->table,'stud_id',$ref_id);
  }
- function getStud($table,$ref_id){
-     return DBHelper::getRecord(array($table,$this->table.' s'),'s.stud_id',$ref_id);
+ function getStud($ref_id){
+     return DBHelper::getRecord($this->table.' s','s.stud_id',$ref_id);
  }
 // Update
-function updateStud($data){
+function updateStud($data,$ref_id){
     return DBHelper::updateRecord($this->table.' s',$this->fields,$data,'s.stud_id',$ref_id); 
  }
  // Delete
@@ -46,7 +46,7 @@ function updateStud($data){
         return DBHelper::getByRelation('tbl_student s, '.$this->table.' d','d.stud_id','s.stud_id',$data);
     }
     function getDepartment(){
-        return Connection::getAllRecord('tbl_dept');
+        return DBHelper::getAllRecord('tbl_dept');
     }
 
 }

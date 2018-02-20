@@ -43,13 +43,13 @@ function __construct(){
     function insertRecord($data,$fields,$table){
         $ok;
         $fld=implode(",",$fields);
-        $q[]=array();
+        $q=array();
         foreach($data as $d) $q[]="?";
         $plc=implode(",",$q);
         $sql="INSERT INTO $table($fld) VALUES($plc)";
         try{
             $stmt=$this->conn->prepare($sql);
-            $ok=$stmt->execute(array($data));				
+            $ok=$stmt->execute($data);				
         }catch(PDOException $e){ echo $e->getMessage();}
         return $ok;
     }
@@ -69,7 +69,7 @@ function getAllRecord($table){
         $sql = "SELECT * FROM $table WHERE $field_id = ?";
         try{
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($ref_id);
+        $stmt->execute(array($ref_id));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e){ echo $e->getMessage();}
         return $row;
@@ -78,7 +78,7 @@ function getAllRecord($table){
     //---
 function getRecord($table,$field_id,$ref_id){
     $row;
-    $sql="SELECT * FROM $table WHERE $field=?";
+    $sql="SELECT * FROM $table WHERE $field_id=?";
     try{
         $stmt=$this->conn->prepare($sql);
         $stmt->execute(array($ref_id));
@@ -94,14 +94,14 @@ function updateRecord($table,$fields,$data,$field_id,$ref_id){
             $sql="UPDATE $table SET $flds WHERE $field_id=$ref_id";
             try{
                 $stmt=$this->conn->prepare($sql);
-                $ok=$stmt->execute(array($data));
+                $ok=$stmt->execute($data);
             }catch(PDOException $e){ echo $e->getMessage();}
             return $ok;
         }
 // Delete
 function deleteRecord($table,$field_id,$ref_id){
     $ok;
-    $sql="DELETE FROM $table WHERE $field=?";
+    $sql="DELETE FROM $table WHERE $field_id=?";
     try{
         $stmt=$this->conn->prepare($sql);
         $ok=$stmt->execute(array($ref_id));				
