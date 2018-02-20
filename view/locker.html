@@ -132,7 +132,7 @@
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID no.<span class="required">*</span>
                                   </label>
                                   <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text"  name="add-location" required="required" class="form-control">
+                                    <input type="number"  min="0" name="add-location" required="required" class="form-control">
                                   </div>
                                 </div>
                                 
@@ -156,7 +156,7 @@
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span>
                                   </label>
                                   <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text"  name="add-location" required="required" class="form-control">
+                                    <input type="email"  name="add-location" required="required" class="form-control">
                                   </div>
                                 </div>
                                 
@@ -201,7 +201,14 @@
                                   </div>
                                 </div>
                                 
-                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <input type="date"  name="add-location" required="required" class="form-control">
+                                    </div>
+                                  </div>
+
                                 <div class="modal-footer">
                                   <input type="hidden" name="ln" value="1">
                                   <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
