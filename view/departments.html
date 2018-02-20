@@ -145,9 +145,9 @@
                         <td>3rd Floor</td>
                         <td>
                           <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
-                          <a href="#" data-toggle="modal" data-target="#editDepartment2"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                          <a href="#" data-toggle="modal" data-target="#viewDepartment2" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
-                          <a href="#" data-toggle="modal" data-target="#deleteDepartment2" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                          <a href="#" data-toggle="modal" data-target="#editDepartment"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                          <a href="#" data-toggle="modal" data-target="#viewDepartment" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
+                          <a href="#" data-toggle="modal" data-target="#deleteDepartment" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                         </td>
                       </tr>
                       <!-- END MODAL -->
@@ -176,7 +176,8 @@
         </div>
         <div class="clearfix"></div>
       </footer>
-      <!-- /footer content -->       <!-- ADD MODAL -->
+      <!-- /footer content -->      
+      <!-- ADD MODAL -->
       <div class="modal fade" tabindex="-1" role="dialog" id="addDepartment">
         <div class="modal-dialog" style="width:40%" role="document">
           <div class="modal-content">
@@ -196,12 +197,12 @@
                   </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
-                    </label>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
-                      <input type="text"  name="add-location" required="required" class="form-control">
-                    </div>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text"  name="add-location" required="required" class="form-control">
                   </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
                   </label>
@@ -220,66 +221,40 @@
         </div>
       </div>
       <!-- END MODAL -->
-
-      <!-- EDIT MODAL -->
-      <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment1">
+      <!-- view modal -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="viewDepartment">
         <div class="modal-dialog" style="width:40%" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">
                 <span>&times;</span>
               </button>
-              <h3 class="modal-title">Edit Department</h3>
+              <h3 class="modal-title">View Department</h3>
             </div>
             <div class="modal-body">
               <form class="form-horizontal form-label-left" method="post">
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text"  name="add-department" required="required" class="form-control">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text"  name="add-location" required="required" class="form-control">
-                        </div>
-                      </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="first-name">Office Location<span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
                   </label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
-                    <input type="text"  name="edit-location" value="5th Floor" required="required" class="form-control">
+                    <input type="text"  name="add-department" required="required" class="form-control">
                   </div>
                 </div>
-                <input type="hidden" name="hidden_id" value="1">
-              </div>
-              <div class="modal-footer">
-                <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" tabindex="-1" role="dialog" id="deleteDepartment1">
-        <div class="modal-dialog" style="width:40%" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                <span>&times;</span>
-              </button>
-              <h3 class="modal-title">Delete Department</h3>
-            </div>
-            <div class="modal-body">
-              <form  method="post">
-                <blockquote>
-                  <p>Are you sure you want to delete this department?</p>
-                  <input type="hidden" name="hidden_id" value="1">
-                  
-                </blockquote>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text"  name="add-location" required="required" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text"  name="add-location" required="required" class="form-control">
+                  </div>
+                </div>
+                
               </div>
               
               <div class="modal-footer">
@@ -291,8 +266,9 @@
           </div>
         </div>
       </div>
-      
-      <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment2">
+      <!-- end view modal -->
+      <!-- EDIT MODAL -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment">
         <div class="modal-dialog" style="width:40%" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -304,33 +280,40 @@
             <div class="modal-body">
               <form class="form-horizontal form-label-left" method="post">
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Name <span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
                   </label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
-                    <input type="text"  name="edit-department" value="BSBA" required="required" class="form-control">
+                    <input type="text"  name="add-department" required="required" class="form-control">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="first-name">Office Location<span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
                   </label>
                   <div class="col-md-9 col-sm-9 col-xs-12">
-                    <input type="text"  name="edit-location" value="3rd Floor" required="required" class="form-control">
+                    <input type="text"  name="add-location" required="required" class="form-control">
                   </div>
                 </div>
-                <input type="hidden" name="hidden_id" value="2">
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input type="text"  name="add-location" required="required" class="form-control">
+                  </div>
+                </div>
+                
               </div>
+              
               <div class="modal-footer">
                 <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
+                
+                <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      
-      
-      
-      <div class="modal fade" tabindex="-1" role="dialog" id="deleteDepartment2">
+      <!-- Delete Modal -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="deleteDepartment">
         <div class="modal-dialog" style="width:40%" role="document">
           <div class="modal-content">
             <div class="modal-header">

@@ -91,9 +91,7 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
-              <div class="title_left">
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addDepartment">Add Department</button>
-              </div>
+              
             </div>
           </div>
           
@@ -103,20 +101,9 @@
             <div class="col-md-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Projects</h2>
+                  <h1>Applicants</h1>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><!-- <a class="close-link"><i class="fa fa-close"></i></a> -->
                     </li>
                   </ul>
                   <div class="clearfix"></div>
@@ -129,7 +116,7 @@
                   <table class="table table-striped projects" id ="dataTable">
                     <thead>
                       <tr>
-                        <th style="width: 1%">#</th>
+                        <th style="width: 1%">ID no.</th>
                         <th >Applicants Name</th>
                         <th>Locker Number</th>
                         <th>Form Type</th>
@@ -140,12 +127,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <!-- END MODAL -->
                       <tr>
-                        <td>1</td>
+                        <td>15387467</td>
                         <td>
-                          EJ Anton Potot                     </td>
+                          Anna Marie Jumao-as                     </td>
                           <td>
-                            14                         </td>
+                            11                         </td>
                             <td>
                               Reservation                         </td>
                               <td>
@@ -156,268 +144,304 @@
                                     Pending</td>   
                                     <td>                            
                                       <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
-                                      <a href="#" data-toggle="modal" data-target="#editDepartment1"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                      <a href="#" data-toggle="modal" data-target="#deleteDepartment1" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                      <a href="#" data-toggle="modal" data-target="#editApplicant"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                      <a href="#" data-toggle="modal" data-target="#viewApplicant" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
+                                      <a href="#" data-toggle="modal" data-target="#deleteApplicant" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                     </td>
-                                    
                                   </tr>
                                   <!-- END MODAL -->
-                                  <tr>
-                                    <td>1</td>
-                                    <td>
-                                      Anna Marie Jumao-as                     </td>
-                                      <td>
-                                        11                         </td>
-                                        <td>
-                                          Reservation                         </td>
-                                          <td>
-                                            2018-01-31                        </td>
-                                            <td>
-                                              2018-02-03                        </td>    
-                                              <td>
-                                                Pending</td>   
-                                                <td>                            
-                                                  <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
-                                                  <a href="#" data-toggle="modal" data-target="#editDepartment1"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                  <a href="#" data-toggle="modal" data-target="#deleteDepartment1" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                                </td>
-                                              </tr>
-                                              <!-- END MODAL -->
-                                              
-                                            </tbody>
-                                          </table>
-                                          <!-- end project list -->
-                                          
-                                          <!-- END MODAL -->
-                                          
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!-- end of page content -->
-                              
-                              
-                              
-                              
-                              <!-- footer content -->
-                              <footer>
-                                <div class="pull-right">
-                                  Software Engineering 2018</a>
-                                </div>
-                                <div class="clearfix"></div>
-                              </footer>
-                              <!-- /footer content -->       <!-- ADD MODAL -->
-                              <div class="modal fade" tabindex="-1" role="dialog" id="addDepartment">
-                                <div class="modal-dialog" style="width:40%" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                      </button>
-                                      <h3 class="modal-title">Add Department</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form class="form-horizontal form-label-left" method="post">
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Name <span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="add-location" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                                        <button class="btn btn-primary" name="adddepartment" type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!-- END MODAL -->
-                              <!-- EDIT MODAL -->
-                              <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment1">
-                                <div class="modal-dialog" style="width:40%" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                      </button>
-                                      <h3 class="modal-title">Edit Department</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form class="form-horizontal form-label-left" method="post">
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Name <span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="edit-department" value="BSIT" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="first-name">Office Location<span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="edit-location" value="5th Floor" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        <input type="hidden" name="hidden_id" value="1">
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                                        <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="modal fade" tabindex="-1" role="dialog" id="deleteDepartment1">
-                                <div class="modal-dialog" style="width:40%" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                      </button>
-                                      <h3 class="modal-title">Delete Department</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form  method="post">
-                                        <blockquote>
-                                          <p>Are you sure you want to delete this department?</p>
-                                          <input type="hidden" name="hidden_id" value="1">
-                                          
-                                        </blockquote>
-                                      </div>
-                                      
-                                      <div class="modal-footer">
-                                        <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                                        
-                                        <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment2">
-                                <div class="modal-dialog" style="width:40%" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                      </button>
-                                      <h3 class="modal-title">Edit Department</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form class="form-horizontal form-label-left" method="post">
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Name <span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="edit-department" value="BSBA" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="first-name">Office Location<span class="required">*</span>
-                                          </label>
-                                          <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" id="num_lockers" name="edit-location" value="3rd Floor" required="required" class="form-control">
-                                          </div>
-                                        </div>
-                                        <input type="hidden" name="hidden_id" value="2">
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                                        <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              
-                              
-                              <div class="modal fade" tabindex="-1" role="dialog" id="deleteDepartment2">
-                                <div class="modal-dialog" style="width:40%" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                      </button>
-                                      <h3 class="modal-title">Delete Department</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form  method="post">
-                                        <blockquote>
-                                          <p>Are you sure you want to delete this department?</p>
-                                          <input type="hidden" name="hidden_id" value="2">
-                                          
-                                        </blockquote>
-                                      </div>
-                                      
-                                      <div class="modal-footer">
-                                        <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                                        
-                                        <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                  
+                                </tbody>
+                              </table>
+                              <!-- end project list -->
                               
                               <!-- END MODAL -->
-                              
                               
                             </div>
                           </div>
-                          
-                          <!-- PHP -->
-                          <!-- END -->
-                          
-                          <!-- Script start -->
-                          <script src="assets/js/jq.js"></script>
-                          <script src="assets/js/bs.js"></script>   
-                          <script src="assets/js/fc.js"></script>
-                          <script src="assets/js/progress.js"></script>
-                          <script src="assets/js/bsprogress.js"></script>
-                          <script src="assets/js/custom.js"></script>
-                          <script src="assets/js/jquery.dataTables.min.js"></script>
-                          <script src="assets/js/dataTables.buttons.min.js"></script>
-                          <script src="assets/js/buttons.flash.min.js"></script>
-                          <script src="assets/js/buttons.html5.min.js"></script>
-                          <script src="assets/js/vfs_fonts.js"></script>
-                          <script src="assets/js/pdfmake.min.js"></script>
-                          <script src="assets/js/jszip.min.js"></script>
-                          <script src="assets/js/buttons.print.min.js"></script>
-                          
-                          <script type="text/javascript">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of page content -->
+                  
+                  
+                  
+                  
+                  <!-- footer content -->
+                  <footer>
+                    <div class="pull-right">
+                      Software Engineering 2018</a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </footer>
+                  <!-- /footer content -->      
+                  <!-- ADD MODAL -->
+                  <div class="modal fade" tabindex="-1" role="dialog" id="addApplicant">
+                    <div class="modal-dialog" style="width:40%" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                          </button>
+                          <h3 class="modal-title">Add Department</h3>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal form-label-left" method="post">
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
+                              </label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                              </div>
+                            </div>
                             
-                            $(document).ready(function() {
-                              $('#dataTable').DataTable( {
-                                dom: 'Bfrtip',
-                                buttons: [
-                                'copyHtml5',
-                                'excelHtml5',
-                                'csvHtml5',
-                                'pdfHtml5',
-                                'print'
-                                ]
-                              } );
-                            } );
-                          </script>
-                          <!-- script end -->
-                        </body>
-                        </html>
+                          </div>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+                          <button class="btn btn-primary" name="adddepartment" type="submit">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END MODAL -->
+                <!--view modal -->
+                <div class="modal fade" tabindex="-1" role="dialog" id="viewApplicant">
+                  <div class="modal-dialog" style="width:40%" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                        </button>
+                        <h3 class="modal-title">Edit Department</h3>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal form-label-left" method="post">
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+                          <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end view modal -->
+                <!-- EDIT MODAL -->
+                <div class="modal fade" tabindex="-1" role="dialog" id="editApplicant">
+                  <div class="modal-dialog" style="width:40%" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                        </button>
+                        <h3 class="modal-title">Edit Department</h3>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal form-label-left" method="post">
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
+                            </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                              <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+                          <button class="btn btn-primary" name="editdepartment" type="submit">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end edit --> 
+                <!-- delete modal -->
+                <div class="modal fade" tabindex="-1" role="dialog" id="deleteApplicant">
+                  <div class="modal-dialog" style="width:40%" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                        </button>
+                        <h3 class="modal-title">Delete Applicant</h3>
+                      </div>
+                      <div class="modal-body">
+                        <form  method="post">
+                          <blockquote>
+                            <p>Are you sure you want to delete this Applicant?</p>
+                            <input type="hidden" name="hidden_id" value="2">
+                            
+                          </blockquote>
+                        </div>
+                        
+                        <div class="modal-footer">
+                          <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+                          
+                          <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- END MODAL -->
+                
+                
+              </div>
+            </div>
+            
+            <!-- PHP -->
+            <!-- END -->
+            
+            <!-- Script start -->
+            <script src="assets/js/jq.js"></script>
+            <script src="assets/js/bs.js"></script>   
+            <script src="assets/js/fc.js"></script>
+            <script src="assets/js/progress.js"></script>
+            <script src="assets/js/bsprogress.js"></script>
+            <script src="assets/js/custom.js"></script>
+            <script src="assets/js/jquery.dataTables.min.js"></script>
+            <script src="assets/js/dataTables.buttons.min.js"></script>
+            <script src="assets/js/buttons.flash.min.js"></script>
+            <script src="assets/js/buttons.html5.min.js"></script>
+            <script src="assets/js/vfs_fonts.js"></script>
+            <script src="assets/js/pdfmake.min.js"></script>
+            <script src="assets/js/jszip.min.js"></script>
+            <script src="assets/js/buttons.print.min.js"></script>
+            
+            <script type="text/javascript">
+              
+              $(document).ready(function() {
+                $('#dataTable').DataTable( {
+                  dom: 'Bfrtip',
+                  buttons: [
+                  'copyHtml5',
+                  'excelHtml5',
+                  'csvHtml5',
+                  'pdfHtml5',
+                  'print'
+                  ]
+                } );
+              } );
+            </script>
+            <!-- script end -->
+          </body>
+          </html>
