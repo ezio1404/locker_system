@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="assets/css/buttons.dataTables.min.css">
 </head>
-<body class="nav-md" ng-app="myApp">
+<body class="nav-md">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col menu_fixed">
@@ -126,32 +126,43 @@
                   <p>Simple table with project listing with progress and editing options</p>
                   
                   <!-- start project list -->
-                  <table class="table table-striped projects"  id ="dataTable" ng-controller="myCtrl">
+                  <table  class="table table-striped projects" id ="dataTable">
                     <thead>
                       <tr>
-                        <!-- <th style="width: 1%">No.</th>
+                        <th style="width: 1%">No.</th>
                         <th >Department Code</th>
                         <th >Department Description</th>
                         <th>Office Location</th>
-                        <th style="width: 20%">Action</th> -->
-                        <th ng-repeat="d in dept_label">{{ d }}</th>
+                        <th style="width: 20%">Action</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
                       <!-- END MODAL -->
-                      <tr ng-repeat="ds in department" >
-                        <td>{{ ds.dept_id }}</td>
-                        <td>{{ ds.dept_code}}</td>
-                        <td>{{ ds.dept_description }}</td>
-                        <td>{{ ds.office_location }}</td>
+                      <tr  >
+                        <td>1</td>
+                        <td>BSIT</td>
+                        <td>asdasd</td>
+                        <td>asdasd</td>
                         <td>
-                          <a href="#" ng-click="editCourse(cs.course_id)"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                          <a href="#" data-toggle="modal" data-target="#editDepartment"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                           <a href="#" data-toggle="modal" data-target="#viewDepartment" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
                           <a href="#" data-toggle="modal" data-target="#deleteDepartment" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                         </td>
                       </tr>
+
                       <!-- END MODAL -->
-                      
+                       <tr  >
+                        <td>1</td>
+                        <td>BSIT</td>
+                        <td>asdasd</td>
+                        <td>asdasd</td>
+                        <td>
+                          <a href="#" data-toggle="modal" data-target="#editDepartment"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                          <a href="#" data-toggle="modal" data-target="#viewDepartment" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
+                          <a href="#" data-toggle="modal" data-target="#deleteDepartment" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                   <!-- end project list -->
@@ -271,32 +282,33 @@
         <div class="modal-dialog" style="width:40%" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
+              <button type="button" class="close"  data-dismiss="modal">
                 <span>&times;</span>
               </button>
               <h3 class="modal-title">Edit Department</h3>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/updateDept.php">
+                  <input type="hidden" name="id" id="edit_dept_id" value="">
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_dept_code" >Department Code <span class="required">*</span>
                     </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                      <input type="text"  name="dept_code" required="required" class="form-control">
+                      <input type="text"  name="dept_code" required="required" class="form-control" id="edit_dept_code">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_dept_code">Department Description<span class="required">*</span>
                     </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                      <input type="text"  name="dept_description" required="required" class="form-control">
+                      <input type="text"  name="dept_description" required="required" class="form-control" id="edit_dept_code">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_office_location" >Office Location<span class="required">*</span>
                     </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                      <input type="text"  name="office_location" required="required" class="form-control">
+                      <input type="text"  name="office_location" required="required" class="form-control" id="edit_office_location">
                     </div>
                   </div>
                   
@@ -346,38 +358,40 @@
   
   <!-- PHP -->
   <!-- END -->
-  <script src="assets/js/jq.js"></script>
-  <script src="assets/js/bs.js"></script>   
-  <script src="assets/js/fc.js"></script>
-  <script src="assets/js/progress.js"></script>
-  <script src="assets/js/bsprogress.js"></script>
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/jquery.dataTables.min.js"></script>
-  <script src="assets/js/dataTables.buttons.min.js"></script>
-  <script src="assets/js/buttons.flash.min.js"></script>
-  <script src="assets/js/buttons.html5.min.js"></script>
-  <script src="assets/js/vfs_fonts.js"></script>
-  <script src="assets/js/pdfmake.min.js"></script>
-  <script src="assets/js/jszip.min.js"></script>
-  <script src="assets/js/buttons.print.min.js"></script>
-  <script src="assets/js/angular.min.js"></script>
-  <script src="assets/js/angular-route.js"></script>
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#dataTable').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-        'copyHtml5',
-        'excelHtml5',
-        'csvHtml5',
-        'pdfHtml5',
-        'print'
-        ]
-      } ); 
-    } );
-  </script>
-  <script>
+            <!-- Script start -->
+            <script src="assets/js/jq.js"></script>
+            <script src="assets/js/bs.js"></script>   
+            <script src="assets/js/fc.js"></script>
+            <script src="assets/js/progress.js"></script>
+            <script src="assets/js/bsprogress.js"></script>
+            <script src="assets/js/custom.js"></script>
+            <script src="assets/js/jquery.dataTables.min.js"></script>
+            <script src="assets/js/dataTables.buttons.min.js"></script>
+            <script src="assets/js/buttons.flash.min.js"></script>
+            <script src="assets/js/buttons.html5.min.js"></script>
+            <script src="assets/js/vfs_fonts.js"></script>
+            <script src="assets/js/pdfmake.min.js"></script>
+            <script src="assets/js/jszip.min.js"></script>
+            <script src="assets/js/buttons.print.min.js"></script>
+            <script src="assets/js/angular.min.js"></script>
+            <script src="assets/js/angular-route.js"></script>
+            
+            <script type="text/javascript">
+              
+              $(document).ready(function() {
+                $('#dataTable').DataTable( {
+                  dom: 'Bfrtip',
+                  buttons: [
+                  'copyHtml5',
+                  'excelHtml5',
+                  'csvHtml5',
+                  'pdfHtml5',
+                  'print'
+                  ]
+                } );
+              } );
+            </script>
+  <!-- <script  type="text/javascript">
    var app = angular.module("myApp", []);
    app.controller("myCtrl", function($http,$scope){
         $http.get('../controller/departmentController/allDept.php')
@@ -431,6 +445,6 @@
             });
         };
    });
-  </script>
+  </script> -->
 </body>
 </html>
