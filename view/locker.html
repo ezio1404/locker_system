@@ -132,7 +132,7 @@
                                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID no.<span class="required">*</span>
                                   </label>
                                   <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="number"  min="0" name="add-location" required="required" class="form-control">
+                                    <input type="number" onkeypress="return event.charCode >= 48" min="1" name="add-location" required="required" class="form-control">
                                   </div>
                                 </div>
                                 
@@ -236,6 +236,8 @@
                   <script src="assets/js/mm.js"></script>
                   <script src="assets/js/dp.js"></script>
                   <script src="assets/js/custom.js"></script>
+                  <script src="assets/js/angular.min.js"></script>
+                  <script src="assets/js/angular-route.js"></script>
                   <script>
                     $(function(){
                       $('#editslocker').click(function(){

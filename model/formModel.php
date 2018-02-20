@@ -2,7 +2,7 @@
 
 require 'db/dbhelper.php';
 
-class Forms extends DBHelper 
+class FormEntry extends DBHelper 
 {
     private $table = 'tbl_forms';
     private $fields = array(

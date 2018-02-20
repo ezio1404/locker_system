@@ -11,9 +11,8 @@ Class Student extends DBHelper{
         'stud_lname',
         'dept_id',
         'stud_yearLevel',
-        'username',
-        'password',
-
+        'email',
+        'date_apply',
     );
 //constructor
     function __construct(){
