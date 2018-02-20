@@ -11,5 +11,5 @@ if(isset($_POST['updatedept'])){
     // $dept_description = "Shukogeki";
     // $office_location = "sex plor";
     $department->updateDept(array($dept_code, $dept_description,$office_location),$ref_id);
-    header('location:department.php');
+    header('location:../../view/departments.html');
 }

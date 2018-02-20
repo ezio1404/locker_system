@@ -9,5 +9,5 @@ if(isset($_POST['addDept'])){ /// button name 'addDept'
     // $dept_description = "College of Business Admin";
     // $office_location = "pep plor";
     $department->addDept(array($dept_code, $dept_description,$office_location));
-   header('location:department.php'); // redirect
+   header('location:../../view/departments.html'); // redirect
 }
