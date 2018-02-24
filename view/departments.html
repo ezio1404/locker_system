@@ -133,7 +133,7 @@
                         <td>
                           <a href="#" ng-click="editDepartment(d.dept_id)"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                           <a href="#" ng-click="viewDepartment(d.dept_id,d.dept_code)" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
-                          <a href="#" data-toggle="modal" data-target="#deleteDepartment" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                          <a href="#" ng-click="deleteDepartment(d.dept_id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                         </td>
                       </tr>
 
@@ -218,13 +218,23 @@
               <h3 class="modal-title">View Department</h3>
             </div>
             <div class="modal-body">
+              <div ng-controller="myCtrl">
                 <h3 id="view_course_name"></h3>
                 <h4 class="w3-center" id="view_course_label"></h4>
                 <table id="view_course_table">
                   <tr>
-                    <th ng-repeat="l in student_labels">{{ l }}</th>
+                    <th ng-repeat="l in student_course_label">{{ l }}</th>
+                  </tr>
+                  <tr  ng-repeat="s in student  | filter:search">
+                      <td>{{ s.stud_id }} </td>
+                      <td>{{ s.stud_fname }} </td>
+                      <td>{{ s.stud_lname }} </td>
+                      <td>{{ s.stud_yearLevel }} </td>
+                      <td>{{ s.email }} </td>
+                      <td>{{ s.date_applied }} </td>
                   </tr>
                 </table>
+              </div>
             </div>
               <div class="modal-footer">
                 <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
@@ -272,7 +282,7 @@
                   </div>
                   <div class="modal-footer">
                     <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                    <button class="btn btn-primary" name="updatedept" type="submit">Submit</button>
+                    <button class="btn btn-primary" name="updateDept" type="submit">Submit</button>
                   </form>
               </div>
             </div>
@@ -290,18 +300,16 @@
                 <h3 class="modal-title">Delete Applicant</h3>
               </div>
               <div class="modal-body">
-                <form  method="post">
+                <!-- <form method="POST" action="../controller/departmentController/deleteDept.php"> -->
                   <blockquote>
-                    <p>Are you sure you want to delete this Applicant?</p>
-                    <input type="hidden" name="hidden_id" value="2">
-                    
+                    <p>Are you sure you want to delete this Applicant?</p>                    
                   </blockquote>
                 </div>
                 
                 <div class="modal-footer">
                   <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                  <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
-                </form>
+                  <button class="btn btn-primary" id="delDept">Delete</button>
+                <!-- </form> -->
               </div>
             </div>
           </div>
@@ -313,7 +321,7 @@
   
   <!-- PHP -->
   <!-- END -->
-            <!-- Script start -->
+<!-- Script start -->
             <script src="assets/js/jq.js"></script>
             <script src="assets/js/bs.js"></script>   
             <script src="assets/js/fc.js"></script>
@@ -372,33 +380,34 @@
                 $('#editDepartment').modal('show');
             });
         };
-        $scope.viewDepartment = function(dept_id,course_name){
+        $scope.viewDepartment = function(dept_id,dept_code){
             $http.post('../controller/departmentController/studentsDept.php',{
                 'dept_id': dept_id
             }).then(function(response){
                console.log(response);
                if(response.data[0] == null){
                 $('#view_course_label').text('No Student');
-                // $('#view_course_table').hide();
+                $('#view_course_table').hide();
                }else{
-                
-                // $scope.student = response.data;
+                $scope.student_course_label  = ["STUDENT ID","FAMILYNAME","GIVENNAME","LEVEL","EMAIL","Date Applied"];
+                $scope.student = response.data;
                 $('#view_course_label').text(`Student's List`);
-                // $('#view_course_table').show();
+                $('#view_course_table').show();
                }
             });
-            $scope.student_labels  = ["STUDENT ID","FAMILYNAME","GIVENNAME","LEVEL"];
-            $('#view_course_name').text(course_name);
+            $scope.student_course_labels  = ["STUDENT ID","FAMILYNAME","GIVENNAME","LEVEL","EMAIL","Date Applied"];
+            $('#view_course_name').text(dept_code);
             $('#viewDepartment').modal('show');
         }
-        $scope.deleteCourse = function(dept_id){
+        $scope.deleteDepartment = function(dept_id){
             console.log(dept_id);
-            $('#deleteCourse').show();
-            $('#delCourse').on('click', function(){
-                $http.post('deleteCourse.php',{
+            $('#deleteDepartment').modal('show');
+            $('#delDept').on('click', function(){
+                $http.post('../controller/departmentController/deleteDept.php',{
                     'dept_id': dept_id
                 }).then(function(response){
                     location.reload();
+                    console.log(response);
                 });
             });
         };

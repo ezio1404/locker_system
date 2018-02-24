@@ -1,7 +1,8 @@
 <?php
 require '../../model/departmentModel.php';
 $department = new Department();
-if(isset($_POST['updatedept'])){
+if(isset($_POST['updateDept'])){
+    // $dept_id=$_POST['dept_id'];
     $ref_id = $_POST['id'];
     $dept_code = $_POST['dept_code'];
     $dept_description = $_POST['dept_description'];

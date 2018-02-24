@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2018 at 07:47 PM
+-- Generation Time: Feb 25, 2018 at 12:03 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -61,8 +61,33 @@ CREATE TABLE `tbl_dept` (
 --
 
 INSERT INTO `tbl_dept` (`dept_id`, `dept_code`, `dept_description`, `office_location`) VALUES
-(1, '', 'BSIT', '5th Floor'),
-(2, '', 'BSBA', '3rd Floor');
+(0, 'test', 'asdasdas', '5th Floor'),
+(1, 'vbnvb', 'vbnvb', 'asdas'),
+(2, 'bASD', 'BSBA', '3rd Floor'),
+(4, 'asd', 'asd', 'asd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_facilitator`
+--
+
+CREATE TABLE `tbl_facilitator` (
+  `faci_id` int(11) NOT NULL,
+  `faci_lname` varchar(255) NOT NULL,
+  `faci_fname` varchar(255) NOT NULL,
+  `dept_id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_facilitator`
+--
+
+INSERT INTO `tbl_facilitator` (`faci_id`, `faci_lname`, `faci_fname`, `dept_id`, `username`, `password`) VALUES
+(12346, 'Jumaos', 'Anna Marie', 1, 'Anna', '1234'),
+(15387467, 'Pearl', 'Polleros', 2, 'pearl', '1234');
 
 -- --------------------------------------------------------
 
@@ -148,17 +173,17 @@ CREATE TABLE `tbl_student` (
   `stud_lname` varchar(255) NOT NULL,
   `dept_id` int(11) NOT NULL,
   `stud_yearLevel` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `date_applied` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_student`
 --
 
-INSERT INTO `tbl_student` (`stud_id`, `stud_fname`, `stud_lname`, `dept_id`, `stud_yearLevel`, `username`, `password`) VALUES
-(4, 'EJ', 'Potot', 1, 4, 'pototskie', 'potot'),
-(5, 'test', 'test', 1, 3, 'test', 'test');
+INSERT INTO `tbl_student` (`stud_id`, `stud_fname`, `stud_lname`, `dept_id`, `stud_yearLevel`, `email`, `date_applied`) VALUES
+(4, 'EJ', 'Potot', 2, 4, 'pototskie', 'potot'),
+(5, 'test', 'test', 2, 3, 'test', 'test');
 
 --
 -- Indexes for dumped tables
@@ -177,22 +202,33 @@ ALTER TABLE `tbl_dept`
   ADD PRIMARY KEY (`dept_id`);
 
 --
+-- Indexes for table `tbl_facilitator`
+--
+ALTER TABLE `tbl_facilitator`
+  ADD PRIMARY KEY (`faci_id`),
+  ADD KEY `dept_id` (`dept_id`);
+
+--
 -- Indexes for table `tbl_forms`
 --
 ALTER TABLE `tbl_forms`
-  ADD PRIMARY KEY (`form_id`);
+  ADD PRIMARY KEY (`form_id`),
+  ADD KEY `locker_num` (`locker_num`),
+  ADD KEY `stud_id` (`stud_id`);
 
 --
 -- Indexes for table `tbl_locker`
 --
 ALTER TABLE `tbl_locker`
-  ADD PRIMARY KEY (`locker_num`);
+  ADD PRIMARY KEY (`locker_num`),
+  ADD KEY `dept_id` (`dept_id`);
 
 --
 -- Indexes for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  ADD PRIMARY KEY (`stud_id`);
+  ADD PRIMARY KEY (`stud_id`),
+  ADD KEY `dept_id` (`dept_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -208,7 +244,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_dept`
 --
 ALTER TABLE `tbl_dept`
-  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_forms`
@@ -223,10 +259,33 @@ ALTER TABLE `tbl_locker`
   MODIFY `locker_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `tbl_student`
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_facilitator`
+--
+ALTER TABLE `tbl_facilitator`
+  ADD CONSTRAINT `tbl_facilitator_ibfk_1` FOREIGN KEY (`dept_id`) REFERENCES `tbl_dept` (`dept_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_forms`
+--
+ALTER TABLE `tbl_forms`
+  ADD CONSTRAINT `tbl_forms_ibfk_1` FOREIGN KEY (`locker_num`) REFERENCES `tbl_locker` (`locker_num`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_forms_ibfk_2` FOREIGN KEY (`stud_id`) REFERENCES `tbl_student` (`stud_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_locker`
+--
+ALTER TABLE `tbl_locker`
+  ADD CONSTRAINT `tbl_locker_ibfk_1` FOREIGN KEY (`dept_id`) REFERENCES `tbl_dept` (`dept_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `stud_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  ADD CONSTRAINT `tbl_student_ibfk_1` FOREIGN KEY (`dept_id`) REFERENCES `tbl_dept` (`dept_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
