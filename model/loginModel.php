@@ -11,6 +11,6 @@ Class Login extends DBHelper{
     }
 
     function signIn($data){
-        return DBHelper::logginUser($data,$this->user,$this->pass);
+        return DBHelper::logginUser($this->user,$this->pass);
     }
 }

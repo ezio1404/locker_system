@@ -15,10 +15,10 @@ function __construct(){
     }catch(PDOException $e){ echo $e->getMessage();}
 }
 // Login
-    function logginUser($data,$user,$pass){
+    function logginUser($user,$pass){
         $sql = "SELECT * FROM tbl_student WHERE $user = ? AND $pass = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute($user,$pass);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if($stmt->rowCount() > 0){
             $_SESSION['student'] = $row['stud_fname'].' '.$row['stud_lname'];
@@ -27,7 +27,7 @@ function __construct(){
         }else{
             $sql2 = "SELECT * FROM tbl_admin WHERE $user = ? AND $pass = ?";
             $stmt2 = $this->conn->prepare($sql2);
-            $stmt2->execute($data);
+            $stmt2->execute($user,$pass);
             $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
             if($stmt2->rowCount() > 0){
                 $_SESSION['admin'] = $row2['firstname'].' '.$row2['lastname'];
