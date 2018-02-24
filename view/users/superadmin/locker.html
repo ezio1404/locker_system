@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Locker System</title>
+  <title>LockItUp</title>
+  <link rel="icon" type="image/png" href="../../image/lock.png">
   <link rel="stylesheet" href="../../assets/css/bs.css">
   <link rel="stylesheet" href="../../assets/css/fa.css">
   <link rel="stylesheet" href="../../assets/css/progress.css">
@@ -108,14 +109,34 @@
                   </div>
                   <div class="x_content">
                     <div class="row">
-                      
-                      <div class="col-md-55">
-                        <div class="thumbnail text-center" style="height:100%">
-                          <h3>Locker 1</h3>
-                          <p>Occupant: None</p>
-                          <button class="btn btn-info" data-toggle="modal" data-target="#checkLocker1" style="margin-top:25%">Check Locker</button>
-                        </div>
-                      </div>
+                      <!-- table start -->
+                      <table class="table table-striped projects" id ="dataTable">
+                          <thead>
+                            <tr>
+                              <th >Locker No.</th>
+                              <th>Locker Status</th>
+                              <th style="width: 20%">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- END MODAL -->
+                            <tr>
+                              <td>11</td>
+                                <td>
+                                  Occupied                        </td>
+                                
+                                          <td>                            
+                                            <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
+                                            <a href="#" data-toggle="modal" data-target="#editApplicant"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                            <a href="#" data-toggle="modal" data-target="#viewApplicant" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
+                                            <a href="#" data-toggle="modal" data-target="#deleteApplicant" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                          </td>
+                                        </tr>
+                                        <!-- END MODAL -->
+                                        
+                                      </tbody>
+                                    </table>
+                      <!-- talble end -->
                       <!-- CHECK MODAL -->
                       <div class="modal fade" tabindex="-1" role="dialog" id="checkLocker1">
                         <div class="modal-dialog" role="document">

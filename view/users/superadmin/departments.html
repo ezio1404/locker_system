@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Locker System</title>
+  <title>LockItUp</title>
+  <link rel="icon" type="image/png" href="../../image/lock.png">
   <link rel="stylesheet" href="../../assets/css/bs.css">
   <link rel="stylesheet" href="../../assets/css/fa.css">
   <link rel="stylesheet" href="../../assets/css/progress.css">
@@ -199,7 +200,7 @@
               <h3 class="modal-title">Add Department</h3>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/addDept.php">
+              <form class="form-horizontal form-label-left" method="post" action="../../../controller/departmentController/addDept.php">
                 <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
                   </label>
@@ -288,7 +289,7 @@
               <h3 class="modal-title">Edit Department</h3>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/updateDept.php">
+                <form class="form-horizontal form-label-left" method="post" action="../../../controller/departmentController/updateDept.php">
                   <input type="hidden" name="id" id="edit_dept_id" value="">
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_dept_code" >Department Code <span class="required">*</span>
@@ -394,7 +395,7 @@
   <!-- <script  type="text/javascript">
    var app = angular.module("myApp", []);
    app.controller("myCtrl", function($http,$scope){
-        $http.get('../controller/departmentController/allDept.php')
+        $http.get('../../../controller/departmentController/allDept.php')
             .then(function(response){
                 $scope.dept_label = ["Dept id","Dept code","Dept Description","Office Location","ACTION"];
                 $scope.department = response.data;
@@ -406,7 +407,7 @@
             $('#'+modal_id).hide();
         };
         $scope.editDepartment = function(dept_id){
-            $http.post('../controller/departmentController/getDept.php',{
+            $http.post('../../../controller/departmentController/getDept.php',{
                 'dept_id': dept_id
             }).then(function(response){
                 $('#edit_dept_code').val(response.data.dept_code);
