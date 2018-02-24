@@ -12,7 +12,7 @@ Class Student extends DBHelper{
         'dept_id',
         'stud_yearLevel',
         'email',
-        'date_apply',
+        'date_applied',
     );
 //constructor
     function __construct(){
