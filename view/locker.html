@@ -115,6 +115,7 @@
                           <button class="btn btn-info" data-toggle="modal" data-target="#checkLocker1" style="margin-top:25%">Check Locker</button>
                         </div>
                       </div>
+                      
                       <!-- CHECK MODAL -->
                       <div class="modal fade" tabindex="-1" role="dialog" id="checkLocker1">
                         <div class="modal-dialog" role="document">
@@ -238,43 +239,5 @@
                   <script src="assets/js/custom.js"></script>
                   <script src="assets/js/angular.min.js"></script>
                   <script src="assets/js/angular-route.js"></script>
-                  <script>
-                    $(function(){
-                      $('#editslocker').click(function(){
-                        $.ajax({
-                          type: 'post',
-                          url: 'adddata.php',
-                          data: $('#myForm').serialize(),
-                          success: function(response){
-                            alert(response);
-                            location.reload();
-                          }
-                        });
-                      });
-                    });
-                    
-                    $(function(){
-                      $('.editLocker').on('click', function(){
-                        $id = $(this).data('id');
-                        $.ajax({
-                          type: 'post',
-                          url: 'getdata.php',
-                          data: 'id='+$id,
-                          dataType: 'json',
-                          cache: false,
-                          success: function(data){
-                            console.log(data.fields);
-                            $('#s_dept_id').val(data.fields['locker_num']);
-                            $('#edit_dept_code').val(data.fields['dept_code']);
-                            $('#edit_dept_status').val(data.fields['locker_status']);
-                            $('#editModalLocker').removeClass('fade').addClass('show');
-                            $('.editclose').on('click', function(){
-                              $('#editModalLocker').removeClass('show').addClass('fade');
-                            });
-                          }
-                        });
-                      });
-                    });
-                  </script>
                 </body>
                 </html>

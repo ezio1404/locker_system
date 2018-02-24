@@ -131,8 +131,8 @@
                         <td>{{ d.dept_description}}</td>
                         <td>{{ d.office_location}}</td>
                         <td>
-                          <a href="#" data-toggle="modal" data-target="#editDepartment"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                          <a href="#" data-toggle="modal" data-target="#viewDepartment" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
+                          <a href="#" ng-click="editDepartment(d.dept_id)"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                          <a href="#" ng-click="viewDepartment(d.dept_id,d.dept_code)" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a>
                           <a href="#" data-toggle="modal" data-target="#deleteDepartment" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                         </td>
                       </tr>
@@ -218,30 +218,21 @@
               <h3 class="modal-title">View Department</h3>
             </div>
             <div class="modal-body">
-              <div class="w3-container w3-margin-top">
                 <h3 id="view_course_name"></h3>
                 <h4 class="w3-center" id="view_course_label"></h4>
-               <table id="view_course_table" class="w3-table-all">
-                   <tr>
-                       <th ng-repeat="l in student_course_label">{{ l }}</th>
-                   </tr>
-                   <tr ng-repeat="s in student_course">
-                       <td>{{ s.student_id }}</td>
-                       <td>{{ s.familyname }}</td>
-                       <td>{{ s.givenname }}</td>
-                       <td>{{ s.level }}</td>
-                   </tr>
-               </table>
-               </div>
+                <table id="view_course_table">
+                  <tr>
+                    <th ng-repeat="l in student_labels">{{ l }}</th>
+                  </tr>
+                </table>
             </div>
               <div class="modal-footer">
                 <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <button class="btn btn-primary" name="deletedepartment" type="submit">Submit</button>
-              </form>
+                <button class="btn btn-primary" name="updateDept" type="submit">Submit</button>
               </div>
             </div>
             </div>
-          </div>
+      </div>
       <!-- end view modal -->
       <!-- EDIT MODAL -->
       <div class="modal fade" tabindex="-1" role="dialog" id="editDepartment">
@@ -254,33 +245,34 @@
                 <h3 class="modal-title">Edit Department</h3>
               </div>
               <div class="modal-body">
-                  <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/addDept.php">
+                  <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/updateDept.php">
+                    <input type="hidden" name="id" value="" id="edit_dept_id">
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Code <span class="required">*</span>
                       </label>
                       <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text"  name="dept_code" required="required" class="form-control">
+                        <input type="text" id="edit_dept_code"  name="dept_code" required="required" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Description<span class="required">*</span>
                       </label>
                       <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text"  name="dept_description" required="required" class="form-control">
+                        <input type="text" id="edit_dept_description"  name="dept_description" required="required" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Office Location<span class="required">*</span>
                       </label>
                       <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text"  name="office_location" required="required" class="form-control">
+                        <input type="text" id="edit_office_location"  name="office_location" required="required" class="form-control">
                       </div>
                     </div>
                     
                   </div>
                   <div class="modal-footer">
                     <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                    <button class="btn btn-primary" name="addDept" type="submit">Submit</button>
+                    <button class="btn btn-primary" name="updatedept" type="submit">Submit</button>
                   </form>
               </div>
             </div>
@@ -372,29 +364,32 @@
             $http.post('../controller/departmentController/getDept.php',{
                 'dept_id': dept_id
             }).then(function(response){
+              console.log(response);
+               $('#edit_dept_id').val(response.data.dept_id);
                 $('#edit_dept_code').val(response.data.dept_code);
                 $('#edit_dept_description').val(response.data.dept_description);
                 $('#edit_office_location').val(response.data.office_location);
-                $('#editDepartment').modal();
+                $('#editDepartment').modal('show');
             });
         };
-        $scope.viewCourse = function(dept_id,course_name){
-            $http.post('viewCourse.php',{
+        $scope.viewDepartment = function(dept_id,course_name){
+            $http.post('../controller/departmentController/studentsDept.php',{
                 'dept_id': dept_id
             }).then(function(response){
                console.log(response);
                if(response.data[0] == null){
                 $('#view_course_label').text('No Student');
-                $('#view_course_table').hide();
+                // $('#view_course_table').hide();
                }else{
-                $scope.student_label  = ["STUDENT ID","FAMILYNAME","GIVENNAME","LEVEL"];
-                $scope.student = response.data;
+                
+                // $scope.student = response.data;
                 $('#view_course_label').text(`Student's List`);
-                $('#view_course_table').show();
+                // $('#view_course_table').show();
                }
             });
-            $('#view_course_name').text(dept_code);
-            $('#viewCourse').show();
+            $scope.student_labels  = ["STUDENT ID","FAMILYNAME","GIVENNAME","LEVEL"];
+            $('#view_course_name').text(course_name);
+            $('#viewDepartment').modal('show');
         }
         $scope.deleteCourse = function(dept_id){
             console.log(dept_id);
