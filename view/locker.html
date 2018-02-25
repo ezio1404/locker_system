@@ -141,7 +141,7 @@
             </div>
             <!-- end page content -->
             <!-- Add modal -->
-            <div class="modal fade" tabindex="-1" role="dialog" id="addDepartment">
+            <div class="modal fade" tabindex="-1" role="dialog" id="addLocker">
                 <div class="modal-dialog" style="width:40%" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -151,18 +151,18 @@
                             <h3 class="modal-title">Add Locker</h3>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal form-label-left" method="post" action="../controller/departmentController/addDept.php">
+                            <form class="form-horizontal form-label-left" method="post" action="../controller/lockerController/addLocker.php">
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Id <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="text" name="dept_code" required="required" class="form-control">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Id <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input type="text" name="dept_id" required="required" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
                         </div>
                         <div class="modal-footer">
                             <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-                            <button class="btn btn-primary" name="addDept" type="submit">Submit</button>
+                            <button class="btn btn-primary" name="addLocker" type="submit">Submit</button>
                             </form>
                         </div>
                     </div>
