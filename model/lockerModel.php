@@ -38,5 +38,4 @@ function updateLocker($data,$ref_id){
 // Some Functions
 
 
-
 }
