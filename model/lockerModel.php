@@ -29,7 +29,7 @@ function addLocker($data){
  }
 // Update
 function updateLocker($data,$ref_id){
-    return DBHelper::updateRecord($this->table.' l',$this->fields,$data,'l.locker_num',$ref_id); 
+    return DBHelper::updateRecord($this->table.' l',array('l.locker_status'),$data,'l.locker_num',$ref_id); 
  }
  // Delete
  function deleteLocker($ref_id){
