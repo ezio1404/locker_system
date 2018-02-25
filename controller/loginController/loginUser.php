@@ -6,6 +6,6 @@ if(isset($_POST['login'])){ // button name login
     $password = $_POST['password'];
     $login->signIn(array($username,$password));
     if (ok){
-    header('location:../../view/users/superadmin/home.html'); // redirect page
+    header('location:../../view/home.html'); // redirect page
     }
 }
