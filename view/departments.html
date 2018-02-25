@@ -114,10 +114,10 @@
                             <div class="x_content">
                                 <p>Simple table with project listing with progress and editing options</p>
                                 <div class="col-md-3 col-sm-3 col-xs-6">
-                                    <input type="text" placeholder="Search Department"  class="form-control col-md-7 col-xs-12" ng-model="search"/>
-                                 </div>
+                                    <input type="text" placeholder="Search Department" class="form-control col-md-7 col-xs-12" ng-model="search" />
+                                </div>
                                 <!-- start project list -->
-                                <table class="table table-striped projects"  >
+                                <table class="table table-striped projects">
                                     <thead>
                                         <tr>
                                             <th ng-repeat="d in dept_label  ">{{ d }}</th>
@@ -329,9 +329,8 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-          $('#dataTable').DataTable( {
-          });
-        } );
+            $('#dataTable').DataTable({});
+        });
     </script>
     <script type="text/javascript">
         var app = angular.module("myApp", []);

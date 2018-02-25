@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LockItUp</title>
     <link rel="icon" type="image/png" href="image/lock.png">
-        <link rel="stylesheet" href="assets/css/bs.css">
+    <link rel="stylesheet" href="assets/css/bs.css">
     <link rel="stylesheet" href="assets/css/fa.css">
     <link rel="stylesheet" href="assets/css/progress.css">
     <link rel="stylesheet" href="assets/css/green.css">
@@ -113,8 +113,8 @@
                                 <p>Simple table with project listing with progress and editing options</p>
                                 <!-- start project list -->
                                 <div class="col-md-3 col-sm-3 col-xs-6">
-                                    <input type="text" placeholder="Search Locker"  class="form-control col-md-7 col-xs-12" ng-model="search"/>
-                                 </div>
+                                    <input type="text" placeholder="Search Locker" class="form-control col-md-7 col-xs-12" ng-model="search" />
+                                </div>
                                 <table class="table table-striped projects">
                                     <thead>
                                         <tr>
@@ -154,12 +154,12 @@
                         <div class="modal-body">
                             <form class="form-horizontal form-label-left" method="post" action="../controller/lockerController/addLocker.php">
                                 <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Id <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <input type="text" name="dept_id" required="required" class="form-control">
-                                        </div>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Id <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <input type="text" name="dept_id" required="required" class="form-control">
                                     </div>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
@@ -188,21 +188,21 @@
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select id="edit_locker_status" class="form-control" name="locker_status">
-                                          <option disabled selected>-------</option>
-                                          <option value="Vacant">Vacant</option>
-                                          <option value="Reserve">Reserve</option>
-                                          <option value="Occupied">Occupied</option>
-                                          <option value="Maintenance">Maintenance</option>
+                                            <option disabled selected>-------</option>
+                                            <option value="Vacant">Vacant</option>
+                                            <option value="Reserve">Reserve</option>
+                                            <option value="Occupied">Occupied</option>
+                                            <option value="Maintenance">Maintenance</option>
                                         </select>
-                                      </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
                                     <button class="btn btn-primary" name="updateLocker" type="submit">Submit</button>
                                 </div>
-                              </form>
+                            </form>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -291,26 +291,26 @@
     <script src="assets/js/angular-route.js"></script>
 
     <script type="text/javascript">
-      $(document).ready(function() {
-        $('#dataTable').DataTable();
-      
-      });
-  </script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+
+        });
+    </script>
     <script type="text/javascript">
-      var app = angular.module("myApp", []);
-      app.controller("myCtrl", function($http, $scope) {
-          $http.get('../controller/lockerController/allLocker.php')
-              .then(function(response) {
-                  $scope.locker_label = ["Locker No.", "Locker Status", "Dept Id","ACTION"];
-                  $scope.locker = response.data;
-              });
-          $scope.openModal = function(modal_id) {
-              $('#' + modal_id).show();
-          };
-          $scope.closeModal = function(modal_id) {
-              $('#' + modal_id).hide();
-          };
-          $scope.editLocker = function(locker_num) {
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($http, $scope) {
+            $http.get('../controller/lockerController/allLocker.php')
+                .then(function(response) {
+                    $scope.locker_label = ["Locker No.", "Locker Status", "Dept Id", "ACTION"];
+                    $scope.locker = response.data;
+                });
+            $scope.openModal = function(modal_id) {
+                $('#' + modal_id).show();
+            };
+            $scope.closeModal = function(modal_id) {
+                $('#' + modal_id).hide();
+            };
+            $scope.editLocker = function(locker_num) {
                 $http.post('../controller/lockerController/getLocker.php', {
                     'locker_num': locker_num
                 }).then(function(response) {
@@ -330,7 +330,7 @@
                     $('#view_dept_id').text(response.data.dept_id);
                     $('#viewLocker').modal('show');
                 });
-              
+
             }
             $scope.deleteLocker = function(locker_num) {
                 console.log(locker_num);
@@ -344,7 +344,8 @@
                     });
                 });
             };
-        });//end app.controller
-  </script>
+        }); //end app.controller
+    </script>
 </body>
+
 </html>
