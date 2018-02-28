@@ -73,7 +73,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addStudent">Add Student</button>
+							<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addForm">Add Form</button>
 						</div>
 					</div>
 				</div>
@@ -82,7 +82,7 @@
 					<div class="col-md-12">
 						<div class="x_panel">
 							<div class="x_title">
-								<h1>Student</h1>
+								<h1>Forms</h1>
 								<ul class="nav navbar-right panel_toolbox">
 									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li>
 								</ul>
@@ -92,7 +92,7 @@
 								<p>Simple table with project listing with progress and editing options</p>
                                 <!-- start project list -->
                                 <div class="col-md-3 col-sm-3 col-xs-6">
-                                        <input type="text" placeholder="Search Department" class="form-control col-md-7 col-xs-12" ng-model="search" /> </div>								<table class="table table-striped projects">
+                                        <input type="text" placeholder="Search form" class="form-control col-md-7 col-xs-12" ng-model="search" /> </div>								<table class="table table-striped projects">
 									<thead>
 										<tr>
 											<th ng-repeat="l in form_label ">{{l}}</th>
@@ -101,16 +101,16 @@
 									<tbody>
 										<!-- END MODAL -->
 										<tr ng-repeat="f in forms |  filter:search">
-											<td>{{ s.form_id}}</td>
-											<td>{{ s.stud_id}}</td>
-											<td>{{ s.locker_num}}</td>
-											<td>{{ s.date_submitted}}</td>
-											<td>{{ s.form_status}}</td>
+											<td>{{ f.form_id}}</td>
+											<td>{{ f.stud_id}}</td>
+											<td>{{ f.locker_num}}</td>
+											<td>{{ f.date_submitted}}</td>
+											<td>{{ f.form_status}}</td>
 											<td>
                                                 <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
-                                                <a href="#" ng-click="editStudent(s.form_id)"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a> 
-                                                <a href="#" ng-click="viewStudent(s.form_id)"  class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a> 
-                                                <a href="#" data-toggle="modal" data-target="#deleteForm" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> </td>
+                                                <a href="#" ng-click="editForm(f.form_id)"  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a> 
+                                                <a href="#" ng-click="viewForm(f.form_id)"  class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View </a> 
+                                                <a href="#" ng-click="deleteForm(f.form_id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> </td>
 										</tr>
 										<!-- END MODAL -->
 									</tbody>
@@ -131,23 +131,23 @@
 		</footer>
 		<!-- /footer content -->
 		<!-- ADD MODAL -->
-		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="addStudent">
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="addForm">
 			<div class="modal-dialog modal-lg" style="width:40%" role="document">
 				<div class="modal-content ">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"> <span>&times;</span> </button>
-						<h3 class="modal-title">Add Department</h3> </div>
+						<h3 class="modal-title">Add Form</h3> </div>
 					<div class="modal-body">
-						<form class="form-horizontal form-label-left" method="post" action="../controller/formController/addStud.php">
+						<form class="form-horizontal form-label-left" method="post" action="../controller/formController/addForm.php">
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="form_id">Student ID<span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" name="form_id" required="required" class="form-control"> </div>
+									<input type="number" name="form_id" required="required" class="form-control"> </div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Family Name <span class="required">*</span> </label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" name="stud_lname" required="required" class="form-control"> </div>
+									<input type="number" name="stud_lname" required="required" class="form-control"> </div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Given Name<span class="required">*</span> </label>

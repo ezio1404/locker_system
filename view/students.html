@@ -41,7 +41,7 @@
                             <ul class="nav side-menu">
                                 <li> <a href="home.html"><i class="fa fa-home"></i> Home </a> </li>
                                 <li> <a href="locker.html"><i class="fa fa-lock"></i> Lockers </a> </li>
-                                <li> <a href="#Student"><i class="fa fa-check-square-o"></i> Student </a> </li>
+                                <li> <a href="#students"><i class="fa fa-check-square-o"></i> Student </a> </li>
                                 <li> <a href="departments.html"><i class="fa fa-book"></i> Departments </a> </li>
                                 <li> <a href="form.html"><i class="fa fa-list"></i> Form </a> </li>
                             </ul>
@@ -166,7 +166,13 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_yearLevel">Year Level <span class="required">*</span> </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="number" min="0" name="stud_yearLevel" required="required" class="form-control"> </div>
+                                    <select name="stud_yearLevel" required="required" class="form-control">
+                                        <option value="1">1st year</option>
+                                        <option value="2">2nd year</option>
+                                        <option value="3">3rd year</option>
+                                        <option value="4">4th year</option>
+                                    </select>
+                                    </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span> </label>
