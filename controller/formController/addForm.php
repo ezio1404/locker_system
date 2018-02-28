@@ -11,7 +11,6 @@ if(isset($_POST['addform'])){ // button name addStud
     $locker_num = $_POST['locker_num'];
     $form_type = $_POST['form_type'];
     $date_submitted = $_POST['date_submitted'];
-    $date_expiration = $_POST['date_expiration'];
     $form_status = $_POST['form_status'];
     // date('F j, Y', strtotime($varial['date_submitted']));   
     // echo 'date today: '.$date.'<br>';
@@ -22,6 +21,6 @@ if(isset($_POST['addform'])){ // button name addStud
     // $date_submitted = $date;
     // $date_expiration = $expdate;
     // $form_status = "Active";
-    $formentry->addForm(array( $stud_id,$locker_num,$form_type, $date_submitted,$date_expiration, $form_status));
-    header('location:applicants.php'); // redirect page
+    $formentry->addForm(array( $stud_id,$locker_num,$form_type, $date_submitted, $form_status));
+    header('location:../../view/form.html'); // redirect page
 }

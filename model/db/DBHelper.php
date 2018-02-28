@@ -133,4 +133,15 @@ function deleteRecord($table,$field_id,$ref_id){
         return $row;
     }
 
+    function getAllRecordId($field,$table){
+        $rows;
+        $sql="SELECT $field FROM $table";
+        try{
+            $stmt=$this->conn->prepare($sql);
+            $stmt->execute();
+            $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){ echo $e->getMessage();}
+        return $rows;
+    }
+
 }

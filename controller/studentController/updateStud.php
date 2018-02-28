@@ -18,5 +18,5 @@ if(isset($_POST['updateStud'])){
     // $email = "ezio";
     // $date_apply = "1234";
     $student->updateStud(array($stud_id, $stud_fname,$stud_lname,$dept_id, $stud_yearLevel,$email, $date_apply),$ref_id);
-    header('location:student.php');
+    header('location:../../view/students.html');
 }

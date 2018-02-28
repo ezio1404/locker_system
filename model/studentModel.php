@@ -45,7 +45,7 @@ function updateStud($data,$ref_id){
         return DBHelper::getByRelation('tbl_student s, '.$this->table.' d','d.stud_id','s.stud_id',$data);
     }
     function getDepartment(){
-        return DBHelper::getAllRecord('tbl_dept');
+        return DBHelper::getAllRecordId('dept_code','tbl_dept');
     }
 
 }

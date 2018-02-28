@@ -10,7 +10,6 @@ class FormEntry extends DBHelper
         'locker_num',
         'form_type',
         'date_submitted',
-        'date_expiration',
         'form_status'
     );
 //constructor
