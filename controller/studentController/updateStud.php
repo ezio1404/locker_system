@@ -7,6 +7,7 @@ if(isset($_POST['updateStud'])){
     $stud_fname = $_POST['stud_fname'];
     $stud_lname = $_POST['stud_lname'];
     $stud_yearLevel = $_POST['stud_yearLevel'];
+    $dept_id=$_POST["dept_id"];
     $email = $_POST['email'];
     $date_apply = $_POST['date_apply'];
     // $stud_id = "15387467";

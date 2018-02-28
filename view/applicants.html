@@ -113,35 +113,15 @@
                                 <p>Simple table with project listing with progress and editing options</p>
 
                                 <!-- start project list -->
-                                <table class="table table-striped projects" id="dataTable">
+                                <table class="table table-striped projects" >
                                     <thead>
                                         <tr>
-                                            <th style="width: 1%">ID no.</th>
-                                            <th>Applicants Name</th>
-                                            <th>Locker Number</th>
-                                            <th>Form Type</th>
-                                            <th>Date Submitted</th>
-                                            <th>Date Expiration</th>
-                                            <th>Form Status</th>
-                                            <th style="width: 20%">Action</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- END MODAL -->
                                         <tr>
-                                            <td>15387467</td>
-                                            <td>
-                                                Anna Marie Jumao-as </td>
-                                            <td>
-                                                11 </td>
-                                            <td>
-                                                Reservation </td>
-                                            <td>
-                                                2018-01-31 </td>
-                                            <td>
-                                                2018-02-03 </td>
-                                            <td>
-                                                Pending</td>
                                             <td>
                                                 <!-- <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
                                                 <a href="#" data-toggle="modal" data-target="#editApplicant" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit </a>
@@ -186,45 +166,45 @@
                     <div class="modal-body">
                         <form class="form-horizontal form-label-left" method="post">
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Students ID no.<span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="stud_id" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Family Name <span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="stud_lname" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Given Name<span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="stud_fname" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Course<span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="dept_id" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                    <input type="text" name="" required="required" class="form-control">
                                 </div>
                             </div>
 
@@ -253,45 +233,45 @@
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left" method="post">
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Students ID no.<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
 
@@ -318,45 +298,45 @@
                 <div class="modal-body">
                     <form class="form-horizontal form-label-left" method="post">
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Applicants Name <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Students ID no.<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Locker Number <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Type <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Expiration <span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Form Status<span class="required">*</span>
                             </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="text" id="num_lockers" name="add-department" required="required" class="form-control">
+                                <input type="text" name="" required="required" class="form-control">
                             </div>
                         </div>
 
