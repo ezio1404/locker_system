@@ -41,7 +41,7 @@
 							<ul class="nav side-menu">
 								<li> <a href="home.html"><i class="fa fa-home"></i> Home </a> </li>
 								<li> <a href="locker.html"><i class="fa fa-lock"></i> Lockers </a> </li>
-								<li> <a href="#Student"><i class="fa fa-check-square-o"></i> Student </a> </li>
+								<li> <a href="students.html"><i class="fa fa-check-square-o"></i> Student </a> </li>
                                 <li> <a href="departments.html"><i class="fa fa-book"></i> Departments </a> </li>
                                 <li> <a href="form.html"><i class="fa fa-list"></i> Form </a> </li>
 							</ul>
@@ -104,6 +104,7 @@
 											<td>{{ f.form_id}}</td>
 											<td>{{ f.stud_id}}</td>
 											<td>{{ f.locker_num}}</td>
+											<td>{{ f.form_type}}</td>
 											<td>{{ f.date_submitted}}</td>
 											<td>{{ f.form_status}}</td>
 											<td>
@@ -140,44 +141,41 @@
 					<div class="modal-body">
 						<form class="form-horizontal form-label-left" method="post" action="../controller/formController/addForm.php">
 							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="form_id">Student ID<span class="required">*</span> </label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Student ID<span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" name="form_id" required="required" class="form-control"> </div>
+									<input type="number" name="stud_id" required="required" class="form-control"> </div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" name="stud_lname" required="required" class="form-control"> </div>
+									<input type="number" name="locker_num" required="required" class="form-control"> </div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Given Name<span class="required">*</span> </label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Form type<span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" name="stud_fname" required="required" class="form-control"> </div>
+									<select  name="form_type" required="required" class="form-control">
+										<option value="Reservation">Reservation</option>
+										<option value="Occupancy">Occupancy</option>
+									</select>
+								 </div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Course<span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="number" min="0" name="dept_id" required="required" class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_yearLevel">Year Level <span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" min="0" name="stud_yearLevel" required="required" class="form-control"> </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="email" name="email" required="required" class="form-control"> </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Applied<span class="required">*</span> </label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted<span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12 ">
-									<input type="date" name="date_apply" required="required" class="form-control"> </div>
+									<input type="date" name="date_submitted" required="required" class="form-control"> </div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Form Status<span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<select  name="form_status" required="required" class="form-control">
+										<option value="Pending">Pending</option>
+										<option value="Approved">Approved</option>
+									</select>
+								</div>
 							</div>
 							<div class="modal-footer">
 								<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-								<button class="btn btn-primary" name="addStud" type="submit">Submit</button>
+								<button class="btn btn-primary" name="addform" type="submit">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -224,7 +222,7 @@
 							</div>
 							<div class="modal-footer">
 								<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-								<button class="btn btn-primary" name="updateStud" type="submit">Submit</button>
+								<button class="btn btn-primary" name="updateForm" type="submit">Submit</button>
 							</div>
 						</form>
 				</div>
@@ -233,7 +231,7 @@
 	</div>
 	<!--end view modal -->
 	<!-- view MODAL -->
-	<div class="modal fade" tabindex="-1" role="dialog" id="viewStudent">
+	<div class="modal fade" tabindex="-1" role="dialog" id="viewForm">
 		<div class="modal-dialog" style="width:40%" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -241,20 +239,18 @@
 					<h3 class="modal-title">Edit Department</h3> </div>
 				<div class="modal-body">
                         <div>
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_form_id">Student Id : </label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_form_id">Form  No. : </label>
 								<p id="view_form_id"></p>
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="locker_status">Family Name : </label>
-                                <p id="view_stud_lname"></p>
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="locker_status">Given Name : </label>
-								<p id="view_stud_fname"></p>
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_dept_id">Dept. ID</label>
-                                <p id="view_dept_id"></p>
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="locker_status">Year Level : </label>
-                                <p id="view_stud_yearLevel"></p>
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="locker_status">Email : </label>
-                                <p id="view_email"></p>
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="locker_status">Date Apply : </label>
-								<p id="view_date_applied"></p>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_stud_id">Student Id : </label>
+								<p id="view_stud_id"></p>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_locker_num">Locker No.: </label>
+                                <p id="view_locker_num"></p>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_form_type">Form Type: </label>
+								<p id="view_form_type"></p>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_date_submitted">Date Submitted</label>
+                                <p id="view_date_submitted"></p>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="view_form_status">Form Status : </label>
+                                <p id="view_form_status"></p>
 						 </div>
 						<div class="modal-footer">
 							<button class="btn button-secondary" data-dismiss="modal" type="button">OK</button>
@@ -318,7 +314,7 @@
 	var app = angular.module("myApp", []);
 	app.controller("myCtrl", function($http, $scope) {
 		$http.get('../controller/formController/allForm.php').then(function(response) {
-			$scope.form_label = ["Form no.","Stud id", "Locker num", "Date Submitted", "Status", "ACTION"];
+			$scope.form_label = ["Form no.","Stud id", "Locker num","Type", "Date Submitted", "Status", "ACTION"];
 			$scope.forms = response.data;
 		});
 		$scope.openModal = function(modal_id) {
@@ -327,6 +323,20 @@
 		$scope.closeModal = function(modal_id) {
 			$('#' + modal_id).hide();
 		};
+		$scope.viewForm = function(form_id) {
+			$http.post('../controller/formController/getForm.php', {
+				'form_id': form_id
+			}).then(function(response) {
+				console.log(response);
+				$('#view_form_id').text(response.data.form_id);
+				$('#view_stud_id').text(response.data.stud_id);
+				$('#view_locker_num').text(response.data.locker_num);
+				$('#view_form_type').text(response.data.form_type);
+				$('#view_date_submitted').text(response.data.date_submitted);
+				$('#view_form_status').text(response.data.form_status);
+				$('#viewForm').modal('show');
+			});
+		}
 	});
 	</script>
 	<!-- script end -->
