@@ -172,7 +172,7 @@
                                         <option value="3">3rd year</option>
                                         <option value="4">4th year</option>
                                     </select>
-                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span> </label>
@@ -224,13 +224,20 @@
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_yearLevel">Year Level <span class="required">*</span> </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input type="number" min="0" id="edit_stud_yearLevel" name="stud_yearLevel" required="required" class="form-control"> </div>
+                               <select name="stud_yearLevel" required="required"   id="edit_stud_yearLevel" class="form-control">
+                                <option value="1">1st year</option>
+                                <option value="2">2nd year</option>
+                                <option value="3">3rd year</option>
+                                <option value="4">4th year</option>
+                            </select>
+                         </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span> </label>
                             <div class="col-md-9 col-sm-9 col-xs-12">
                                 <input type="email" id="edit_email" name="email" required="required" class="form-control"> </div>
                         </div>
+                                <input type="date"  id="edit_date_applied" name="date_apply" hidden>
                         <div class="modal-footer">
                             <button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
                             <button class="btn btn-primary" name="updateStud" type="submit">Submit</button>
@@ -342,11 +349,14 @@
                     'stud_id': stud_id
                 }).then(function(response) {
                     console.log(stud_id);
+                    $('#edit_stud_id').val(response.data.stud_id);
                     $('#edit_stud_lname').val(response.data.stud_lname);
                     $('#edit_stud_fname').val(response.data.stud_fname);
                     $('#edit_dept_id').val(response.data.dept_id);
                     $('#edit_stud_yearLevel').val(response.data.stud_yearLevel);
                     $('#edit_email').val(response.data.email);
+                    $('#edit_date_applied').val(response.data.date_applied);
+                    // console.log(response.data.date_applied);
                     $('#editStudent').modal('show');
                 });
             };
