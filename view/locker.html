@@ -39,11 +39,12 @@
 						<div class="menu_section">
 							<h3>Menu</h3>
 							<ul class="nav side-menu">
-								<li> <a href="home.html"><i class="fa fa-home"></i> Home </a> </li>
-								<li> <a href="locker.html"><i class="fa fa-lock"></i> Lockers </a> </li>
-								<li> <a href="students.html"><i class="fa fa-check-square-o"></i> Students </a> </li>
-								<li> <a href="departments.html"><i class="fa fa-book"></i> Departments </a> </li>
-								<li> <a href="form.html"><i class="fa fa-list"></i> Form </a> </li>
+									<li> <a href="home.html"><i class="fa fa-home"></i> Home </a> </li>
+									<li> <a href="locker.html"><i class="fa fa-lock"></i> Lockers </a> </li>
+									<li> <a href="students.html"><i class="fa fa-check-square-o"></i> Students </a> </li>
+									<li> <a href="departments.html"><i class="fa fa-book"></i> Departments </a> </li>
+									<li> <a href="form.html"><i class="fa fa-list"></i> Forms </a> </li>
+									<li> <a href="reports.html"><i class="fa fa-bar-chart"></i> Reports </a> </li>
 							</ul>
 						</div>
 					</div>
@@ -130,7 +131,11 @@
 								<div class="form-group">
 									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Id <span class="required">*</span> </label>
 									<div class="col-md-9 col-sm-9 col-xs-12">
-										<input type="text" name="dept_id" required="required" class="form-control"> </div>
+										<!-- <input type="text" name="dept_id" required="required" class="form-control"> -->
+										<select name="dept_id" required="required" class="form-control">
+											<option ng-repeat="d in dept" value="{{d.dept_id}}">{{d.dept_code}}</option>
+										</select>
+									 </div>
 								</div>
 								<div class="modal-footer">
 									<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>

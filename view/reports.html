@@ -10,11 +10,18 @@
 	<link rel="stylesheet" href="assets/css/bs.css">
 	<link rel="stylesheet" href="assets/css/fa.css">
 	<link rel="stylesheet" href="assets/css/progress.css">
+	<link rel="stylesheet" href="assets/css/green.css">
 	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="assets/css/custom.css"> </head>
-
-<body class="nav-md">
-	<div class="container body">
+	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="assets/css/buttons.dataTables.min.css"> </head>
+<style>
+    div.dataTables_wrapper {
+        margin-bottom: 3em;
+    }
+</style>
+<body class="nav-md" ng-app="myApp">
+	<div class="container body" ng-controller="myCtrl">
 		<div class="main_container">
 			<div class="col-md-3 left_col menu_fixed">
 				<div class="left_col scroll-view">
@@ -71,37 +78,82 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>Home Page</h3> </div>
-					</div>
-					<div class="clearfix"></div>
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="x_panel">
-								<div class="x_title">
-									<h2>Plain Page</h2>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content"> Add content to the page ... </div>
-							</div>
+                            
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- /page content -->
+				<div class="clearfix">
+                    
+                </div>
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Reports</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a> </li>
+								</ul>
+								<div class="clearfix">
+                                    
+                                </div>
+							</div>
+							<div class="x_content">
+								<p>Simple table with project listing with progress and editing options</p>
+								<div class="col-md-3 col-sm-3 col-xs-6">
+                                </div>
+								<!-- start project list -->
+								<button class="btn btn-round btn-default btn-lg"><a href="reports/departmentsReport.php"><i class="fa fa-bar-chart"></i>Department Reports</a></button>
+								<button class="btn btn-round btn-default btn-lg"><a href="reports/studentsReport.php"><i class="fa fa-bar-chart"></i>Student Reports</a></button>
+								<button class="btn btn-round btn-default btn-lg"><a href="reports/lockersReport.php"><i class="fa fa-bar-chart"></i>Lockers Reports</a></button>
+								<button class="btn btn-round btn-default btn-lg"><a href="reports/formsReport.php"><i class="fa fa-bar-chart"></i>Forms Reports</a></button>
+								
+                            </div>
+                            <!--  -->
+                            <!--  -->
+                            
+						</div>
+                    </div>
+				</div>
+            </div>
+            
+            <!-- end of page content -->
+            <!-- new page context -->
+            
+            <!--  end new-->
 			<!-- footer content -->
 			<footer>
-				<div class="pull-right"> Software Engineering 2018
-				</div>
+				<div class="pull-right"> Software Engineering 2018 </div>
 				<div class="clearfix"></div>
 			</footer>
 			<!-- /footer content -->
 		</div>
 	</div>
+	<!-- PHP -->
+	<!-- END -->
+	<!-- Script start -->
 	<script src="assets/js/jq.js"></script>
 	<script src="assets/js/bs.js"></script>
 	<script src="assets/js/fc.js"></script>
 	<script src="assets/js/progress.js"></script>
+	<script src="assets/js/bsprogress.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.buttons.min.js"></script>
+	<script src="assets/js/buttons.flash.min.js"></script>
+	<script src="assets/js/buttons.html5.min.js"></script>
+	<script src="assets/js/vfs_fonts.js"></script>
+	<script src="assets/js/pdfmake.min.js"></script>
+	<script src="assets/js/jszip.min.js"></script>
+	<script src="assets/js/buttons.print.min.js"></script>
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/angular-route.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+        $('table.display').DataTable();
+    } );
+	</script>
 </body>
 
 </html>
