@@ -48,6 +48,7 @@
 								<li> <a href="students.html"><i class="fa fa-check-square-o"></i> students </a> </li>
 								<li> <a href="departments.html"><i class="fa fa-book"></i> Departments </a> </li>
 								<li> <a href="form.html"><i class="fa fa-list"></i> Form </a> </li>
+								<li> <a href="../reports.html"><i class="fa fa-bar-chart"></i> Reports </a> </li>
 							</ul>
 						</div>
 					</div>
