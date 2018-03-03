@@ -36,6 +36,8 @@ function updateLocker($data,$ref_id){
           return DBHelper::deleteRecord($this->table,'locker_num',$ref_id);
 }
 // Some Functions
-
+function getAllDeptByID(){
+    return DBHelper::getAllRecord('tbl_dept');
+}
 
 }

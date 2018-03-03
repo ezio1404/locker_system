@@ -143,12 +143,20 @@
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Student ID<span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" name="stud_id" required="required" class="form-control"> </div>
+									<!-- <input type="number" name="stud_id" required="required" class="form-control">  -->
+									<select name="stud_id" required="required" class="form-control">
+                                        <option ng-repeat="s in stud" value="{{s.stud_id}}">{{s.stud_id}}</option>
+                                    </select>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" name="locker_num" required="required" class="form-control"> </div>
+									<!-- <input type="number" name="locker_num" required="required" class="form-control">  -->
+									<select name="locker_num" required="required" class="form-control">
+                                        <option ng-repeat="l in locker" value="{{l.locker_num}}">{{l.locker_num}}</option>
+                                    </select>
+								</div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Form type<span class="required">*</span> </label>
@@ -322,6 +330,12 @@
 			$scope.form_label = ["Form no.","Stud id", "Locker num","Type", "Date Submitted", "Status", "ACTION"];
 			$scope.forms = response.data;
 		});
+		$http.get('../controller/studentController/allStud.php').then(function(response) {
+			$scope.stud = response.data;
+	});
+	$http.get('../controller/lockerController/allLocker.php').then(function(response) {
+                $scope.locker = response.data;
+        });
 		$scope.openModal = function(modal_id) {
 			$('#' + modal_id).show();
 		};

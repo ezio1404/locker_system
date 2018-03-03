@@ -82,11 +82,9 @@
 							<div class="x_title">
 								<h2>Lockers <small> BSBA </small></h2>
 								<ul class="nav navbar-right panel_toolbox"> <small>Filter by</small>
-									<select id="filter" class="form-control">
-										<option value="BSBA">BSBA</option>
-										<option value="BSIT">BSIT</option>
-										<option value="BSOA">BSOA</option>
-									</select>
+									<select name="filter" id="filter"  name="dept_id" required="required" class="form-control">
+                                        <option ng-repeat="d in dept" value="{{d.dept_id}}">{{d.dept_code}}</option>
+                                    </select>
 								</ul>
 								<div class="clearfix"></div>
 							</div>
@@ -243,14 +241,14 @@
 	<script src="assets/js/buttons.html5.min.js"></script>
 	<script src="assets/js/vfs_fonts.js"></script>
 	<script src="assets/js/pdfmake.min.js"></script>
+	<!-- <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/ddtf.js"></script> -->
 	<script src="assets/js/jszip.min.js"></script>
 	<script src="assets/js/buttons.print.min.js"></script>
 	<script src="assets/js/angular.min.js"></script>
 	<script src="assets/js/angular-route.js"></script>
+
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#dataTable').DataTable();
-	});
 	</script>
 	<script type="text/javascript">
 	var app = angular.module("myApp", []);
@@ -258,6 +256,9 @@
 		$http.get('../controller/lockerController/allLocker.php').then(function(response) {
 			$scope.locker_label = ["Locker No.", "Locker Status", "Dept Id", "ACTION"];
 			$scope.locker = response.data;
+		});
+		$http.get('../controller/departmentController/allDept.php').then(function(response) {
+			$scope.dept = response.data;
 		});
 		$scope.openModal = function(modal_id) {
 			$('#' + modal_id).show();
