@@ -185,45 +185,50 @@
 	</div>
 	<!-- END MODAL -->
 	<!--edit Student -->
-	<div class="modal fade" tabindex="-1" role="dialog" id="editStudent">
+	<div class="modal fade" tabindex="-1" role="dialog" id="editForm">
 		<div class="modal-dialog" style="width:40%" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"> <span>&times;</span> </button>
 					<h3 class="modal-title">Edit Student</h3> </div>
 				<div class="modal-body">
-                        <form class="form-horizontal form-label-left" method="post" action="../controller/formController/updateStud.php">
-                            <input type="hidden" name="id" value="" id="edit_form_id">
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Family Name <span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" id="edit_stud_lname" name="stud_lname" required="required" class="form-control"> </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Given Name<span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" id="edit_stud_fname" name="stud_fname" required="required" class="form-control"> </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Course<span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="number" min="0" id="edit_dept_id" name="dept_id" required="required" class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_yearLevel">Year Level <span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="number" min="0" id="edit_stud_yearLevel" name="stud_yearLevel" required="required" class="form-control"> </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email<span class="required">*</span> </label>
-								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="email" id="edit_email" name="email" required="required" class="form-control"> </div>
-							</div>
-							<div class="modal-footer">
-								<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-								<button class="btn btn-primary" name="updateForm" type="submit">Submit</button>
-							</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Student ID<span class="required">*</span> </label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input type="number" name="stud_id" required="required" class="form-control"> </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input type="number" name="locker_num" required="required" class="form-control"> </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Form type<span class="required">*</span> </label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<select  name="form_type" required="required" class="form-control">
+								<option value="Reservation">Reservation</option>
+								<option value="Occupancy">Occupancy</option>
+							</select>
+						 </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted<span class="required">*</span> </label>
+						<div class="col-md-9 col-sm-9 col-xs-12 ">
+							<input type="date" name="date_submitted" required="required" class="form-control"> </div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Form Status<span class="required">*</span> </label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<select  name="form_status" required="required" class="form-control">
+								<option value="Pending">Pending</option>
+								<option value="Approved">Approved</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+						<button class="btn btn-primary" name="updateForm" type="submit">Submit</button>
+					</div>
 						</form>
 				</div>
 			</div>
