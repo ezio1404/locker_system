@@ -1,7 +1,6 @@
 <?php
 require '../../model/departmentModel.php';
 $department = new Department();
-$department->getAllDept();
 $row=$department->getAllDept();
 
 ?>

@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+require '../../model/lockerModel.php';
+$locker = new Locker();
+$row=$locker->getAllLocker();
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -105,17 +109,19 @@
 								<table class="table table-striped projects" id="datatable-buttons">
 									<thead>
 										<tr>
-                                            <th> Dept Id </th>
-                                            <th> Dept Code</th>
-                                            <th> Description</th>
+                                            <th> Locker num. </th>
+                                            <th> Dept ID</th>
+                                            <th> Status</th>
 										</tr>
 									</thead>
 									<tbody>
+									<?php foreach($row as $r): ?>
 										<tr >
-											<td><?php ?> </td>
-											<td><?php ?></td>
-											<td><?php ?></td>
+											<td><?php echo $r['locker_num'];?></td>
+											<td><?php echo $r['dept_id'];?></td>
+											<td><?php echo $r['locker_status'];?></td>
 										</tr>
+										<?php endforeach?>
 									</tbody>
 								</table>
                             </div>

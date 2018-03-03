@@ -1,3 +1,8 @@
+<?php
+require '../../model/formModel.php';
+$formentry = new FormEntry();
+$row=$formentry->getAllForm();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,14 +119,16 @@
 										</tr>
 									</thead>
 									<tbody>
+									<?php foreach($row as $r): ?>
 										<tr >
-											<td><?php ?> </td>
-											<td><?php ?></td>
-											<td><?php ?></td>
-                                            <td><?php ?></td>
-                                            <td><?php ?></td>
-											<td><?php ?></td>
+											<td><?php echo $r['form_id']; ?></td>
+											<td><?php echo $r['stud_id']; ?></td>
+											<td><?php echo $r['locker_num']; ?></td>
+                                            <td><?php echo $r['form_type']; ?></td>
+                                            <td><?php echo $r['date_submitted']; ?></td>
+											<td><?php echo $r['form_status']; ?></td>
 										</tr>
+										<?php endforeach?>
 									</tbody>
 								</table>
                             </div>

@@ -1,3 +1,8 @@
+<?php
+require '../../model/studentModel.php';
+$student = new Student();
+$row=$student->getAllStud();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,15 +120,17 @@
 										</tr>
 									</thead>
 									<tbody>
+									<?php foreach($row as $r): ?>
 										<tr>
-											<td><?php ?> </td>
-											<td><?php ?></td>
-											<td><?php ?></td>
-                                            <td><?php ?></td>
-                                            <td><?php ?></td>
-                                            <td><?php ?></td>
-											<td><?php ?></td>
+											<td><?php echo $r['stud_id'];?></td>
+											<td><?php echo $r['stud_fname'];?></td>
+											<td><?php echo $r['stud_lname'];?></td>
+                                            <td><?php echo $r['dept_id'];?></td>
+                                            <td><?php echo $r['stud_yearLevel'];?></td>
+                                            <td><?php echo $r['email'];?></td>
+											<td><?php echo $r['date_applied'];?></td>
 										</tr>
+										<?php endforeach?>
 									</tbody>
 								</table>
                             </div>
