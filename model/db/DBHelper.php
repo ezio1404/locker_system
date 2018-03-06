@@ -16,28 +16,22 @@ function __construct(){
 }
 // Login
     function logginUser($user,$pass){
-        $sql = "SELECT * FROM tbl_student WHERE $user = ? AND $pass = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute($user,$pass);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($stmt->rowCount() > 0){
-            $_SESSION['student'] = $row['stud_fname'].' '.$row['stud_lname'];
-            $_SESSION['stud_id'] = $row['stud_id'];
-            echo "<script> window.location='home.php?$_SESSION[student]'; </script>";
-        }else{
-            $sql2 = "SELECT * FROM tbl_admin WHERE $user = ? AND $pass = ?";
+        $flag=false;
+            $sql2 = "SELECT * FROM tbl_admin WHERE username = ? AND password = ?";
             $stmt2 = $this->conn->prepare($sql2);
-            $stmt2->execute($user,$pass);
+            $stmt2->execute(array($user,$pass));
             $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
             if($stmt2->rowCount() > 0){
                 $_SESSION['admin'] = $row2['firstname'].' '.$row2['lastname'];
                 $_SESSION['admin_id'] = $row2['admin_id'];
                 echo "<script> window.location='home.php?$_SESSION[admin]'; </script>";
+                $flag=true;
             }else{
                echo "<script> alert('Error'); </script>";
             }
-        }
+        
         $this->conn = null;
+        return $flag;
     }
 // Create
     function insertRecord($data,$fields,$table){
@@ -120,6 +114,17 @@ function deleteRecord($table,$field_id,$ref_id){
         return $row;
        // $this->conn = null;
     }
+    function countRecordGroup($field,$other,$countName,$table,$ref_id){
+        $sql = "SELECT $other,count($field) AS $countName  FROM $table group by $ref_id";
+        try{
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){ echo $e->getMessage();}
+        return $row;
+       // $this->conn = null;
+    }
+    
     //
     function destroy(){
         $this->conn=null;

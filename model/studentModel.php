@@ -47,5 +47,7 @@ function updateStud($data,$ref_id){
     function getAllDept(){
         return DBHelper::getAllRecord('tbl_dept');
     }
-
+    function getCountStud(){
+        return DBHelper::countRecord('stud_id',$this->table);
+    }
 }

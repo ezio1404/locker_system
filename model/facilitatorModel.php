@@ -40,5 +40,7 @@ function updateFaci($data,$ref_id){
           return DBHelper::deleteRecord($this->table,'faci_id',$ref_id);
 }
 // Some Functions
-
+function getAllFaci(){
+        return DBHelper::getAllRecord('faci_id','tbl_facilitator');
+    }
 }

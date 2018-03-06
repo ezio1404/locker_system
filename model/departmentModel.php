@@ -39,4 +39,7 @@ function updateDept($data,$ref_id){
       function getStudentDepts($data){
         return DBHelper::getByRelation('tbl_student s, '.$this->table.' d','d.dept_id','s.dept_id',$data);
     }
+    function getCountDept(){
+        return DBHelper::countRecord('dept_id',$this->table);
+    }
 }

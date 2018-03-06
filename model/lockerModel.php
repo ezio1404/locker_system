@@ -39,5 +39,19 @@ function updateLocker($data,$ref_id){
 function getAllDeptByID(){
     return DBHelper::getAllRecord('tbl_dept');
 }
-
+function getCountLocker(){
+    return DBHelper::countRecordGroup('locker_num','dept_id','NoOfLockers',$this->table,'dept_id');
+}
+// function getCountLockerVacant(){
+//     return DBHelper::countRecordType('locker_num',$this->table,'locker_status','Vacant');
+// }
+// function getCountLockerReserve(){
+//     return DBHelper::countRecordType('locker_num',$this->table,'locker_status','Reserve');
+// }
+// function getCountLockerOccupied(){
+//     return DBHelper::countRecordType('locker_num',$this->table,'locker_status','Occupied');
+// }
+// function getCountLockerMaintenance(){
+//     return DBHelper::countRecordType('locker_num',$this->table,'locker_status','Maintenance');
+// }
 }

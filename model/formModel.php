@@ -31,7 +31,7 @@ function getDept($ref_id){
     return DBHelper::getRecord($this->table.' f','f.form_id',$ref_id);
 }
 // Update
-function updateForm($data){
+function updateForm($data,$ref_id){
     return DBHelper::updateRecord($this->table.' f',$this->fields,$data,'f.form_id',$ref_id); 
  }
 // Delete
