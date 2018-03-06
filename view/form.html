@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="assets/css/buttons.dataTables.min.css"> </head>
 
-<body class="nav-md" ng-app="myApp">
-	<div class="container body" ng-controller="myCtrl">
+<body class="nav-md" ng-app="myApp"  ng-controller="myCtrl">
+	<div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col menu_fixed">
 				<div class="left_col scroll-view">
@@ -199,45 +199,55 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"> <span>&times;</span> </button>
-					<h3 class="modal-title">Edit Student</h3> </div>
+					<h3 class="modal-title">Edit Form</h3> </div>
 				<div class="modal-body">
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Student ID<span class="required">*</span> </label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<input type="number" name="stud_id" required="required" class="form-control"> </div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<input type="number" name="locker_num" required="required" class="form-control"> </div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Form type<span class="required">*</span> </label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select  name="form_type" required="required" class="form-control">
-								<option value="Reservation">Reservation</option>
-								<option value="Occupancy">Occupancy</option>
-							</select>
-						 </div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted<span class="required">*</span> </label>
-						<div class="col-md-9 col-sm-9 col-xs-12 ">
-							<input type="date" name="date_submitted" required="required" class="form-control"> </div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Form Status<span class="required">*</span> </label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select  name="form_status" required="required" class="form-control">
-								<option value="Pending">Pending</option>
-								<option value="Approved">Approved</option>
-							</select>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
-						<button class="btn btn-primary" name="updateForm" type="submit">Submit</button>
-					</div>
+						<form class="form-horizontal form-label-left" method="post" action="../controller/formController/addForm.php">
+							<div class="form-group">
+								<input type="number" min="0" id="edit_form_id" hidden>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_id">Student ID<span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<!-- <input type="number" name="stud_id" required="required" class="form-control">  -->
+									<select name="stud_id" id="edit_stud_id" required="required" class="form-control">
+                                        <option ng-repeat="s in stud" value="{{s.stud_id}}">{{s.stud_id}}</option>
+                                    </select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="stud_fname">Locker num. <span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<!-- <input type="number" name="locker_num" required="required" class="form-control">  -->
+									<select name="locker_num" id="edit_locker_num" required="required" class="form-control">
+                                        <option ng-repeat="l in locker" value="{{l.locker_num}}">{{l.locker_num}}</option>
+                                    </select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Given Name">Form type<span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<select  name="form_type" id="edit_form_type" required="required" class="form-control">
+										<option value="Reservation">Reservation</option>
+										<option value="Occupancy">Occupancy</option>
+									</select>
+								 </div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date Submitted<span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12 ">
+									<input type="date " id="edit_date_submitted" name="date_submitted" required="required" class="form-control"> </div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="Course">Form Status<span class="required">*</span> </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<select  name="form_status" id="edit_form_status" required="required" class="form-control">
+										<option value="Pending">Pending</option>
+										<option value="Approved">Approved</option>
+									</select>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn button-secondary" data-dismiss="modal" type="button">Cancel</button>
+								<button class="btn btn-primary" name="updateForm" type="submit">Submit</button>
+							</div>
 						</form>
 				</div>
 			</div>
@@ -342,6 +352,21 @@
 		};
 		$scope.closeModal = function(modal_id) {
 			$('#' + modal_id).hide();
+		};
+		$scope.editForm = function(form_id) {
+			$http.post('../controller/formController/getForm.php', {
+				'form_id': form_id
+			}).then(function(response) {
+				console.log(form_id);
+				$('#edit_form_id').val(response.data.form_id);
+				$('#edit_stud_id').val(response.data.stud_id);
+				$('#edit_locker_num').val(response.data.locker_num);
+				// console.log(response.data.locker_num);
+				$('#edit_form_type').val(response.data.form_type);
+				$('#edit_date_submitted').val(response.data.date_submitted);
+				$('#edit_form_status').val(response.data.form_status);
+				$('#editForm').modal('show');
+			});
 		};
 		$scope.viewForm = function(form_id) {
 			$http.post('../controller/formController/getForm.php', {
